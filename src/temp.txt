@@ -1,0 +1,7 @@
+if(this.state.currentPage!=this.state.page){
+    this.addContent(this.props.thumbs.thumbs);
+    console.log("rendering content: ", this.state.content);
+    this.setState({
+        currentPage: this.state.page
+    });
+}
