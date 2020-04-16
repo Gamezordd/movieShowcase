@@ -65,35 +65,28 @@ class Main extends Component {
                     firstcall: false
                 });
             }
-            console.log("content: ", this.state.content);
+            console.log(this.props.thumbs.thumbs);
             
             return(
                 <div className="row">
                     {this.state.content.map((element) =>{
+                        console.log("element is", element);
+                        
                         return(
                             <div className="col-md-3 m-4"> 
                             <Card>
-                                <CardImg src={imageBaseUrl+element.poster_path} alt={element.original_title}/>
+                                <CardImg src={element.artwork} 
+                                    alt={element.original_title}/>
                                 <h2>{element.original_title}</h2>
-                                {this.props.thumbs.isLoading &&
-                                <div>
-                                    <h4>Loading artwork...</h4>
-                                </div>
-                                }
                             </Card>
-                                {this.props.thumbs.isLoading &&
-                                    <div>
-                                        <h4>Loading...</h4>
-                                    </div>
-                                }
                             </div>
                         );
                     })}
-                    {this.props.thumbs.isLoading &&
-                        <div>
-                            Loading...
-                        </div>
-                    }
+                {this.props.thumbs.isLoading &&
+                    <div className="row">
+                        <h4>Loading...</h4>
+                    </div>
+                }
                 </div>
             );
         }

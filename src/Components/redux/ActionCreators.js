@@ -6,6 +6,17 @@ export const addThumb = (movies) => ({
     payload: movies
 });
 
+export const createArr = (movies) => (dispatch) => {
+    const moviesArr = movies.map(movie => ({
+        artwork: URLs.imageBaseUrl + movie.poster_path,
+        title: movie.title,
+        description: movie.overview,
+        adult:movie.adult
+    }))
+   
+    return(dispatch(addThumb(moviesArr)))
+}
+
 export const thumbLoading = () => ({
     type: ActionTypes.THUMB_LOADING
 });
@@ -18,7 +29,6 @@ export const thumbFailed = (errmess) =>({
 export const fetchMovies = (page) => (dispatch) => {
     dispatch(thumbLoading(true));
     return fetch(URLs.listBaseUrlpre + URLs.api_key + URLs.listBaseUrlpost + page)
-    
         .then(response => {
             if (response.ok){
                 return response;
@@ -36,6 +46,6 @@ export const fetchMovies = (page) => (dispatch) => {
             throw errmess;
         })
         .then(response => response.json())
-        .then(thumbs => dispatch(addThumb(thumbs)))
+        .then(thumbs => dispatch(createArr(thumbs.results)))
         .catch(error => dispatch(thumbFailed(error.message)))
 }
