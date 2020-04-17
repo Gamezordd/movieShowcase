@@ -9,9 +9,7 @@ const store = ConfigureStore();
 function App() {
   return (
     <Provider store={store}>
-      <div className="container">
         <Main />
-      </div>
     </Provider>
   );
 }

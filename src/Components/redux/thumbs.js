@@ -7,7 +7,6 @@ export const Thumbs = (state = {
 }, action) => {
     switch(action.type) {
         case ActionTypes.ADD_THUMB:
-            console.log("add thumb payload", action.payload);
             return{...state, isLoading: false, errMess: null, thumbs: action.payload};
         
         case ActionTypes.THUMB_LOADING:          

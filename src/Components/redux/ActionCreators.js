@@ -7,13 +7,15 @@ export const addThumb = (movies) => ({
 });
 
 export const createArr = (movies) => (dispatch) => {
+    
     const moviesArr = movies.map(movie => ({
         artwork: URLs.imageBaseUrl + movie.poster_path,
         title: movie.title,
         description: movie.overview,
-        adult:movie.adult
+        adult:movie.adult,
+        id:movie.id
     }))
-   
+    
     return(dispatch(addThumb(moviesArr)))
 }
 
@@ -41,7 +43,6 @@ export const fetchMovies = (page) => (dispatch) => {
         },
         error => {
             console.log("error thrown");
-            
             var errmess = new Error(error.message);
             throw errmess;
         })

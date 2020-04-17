@@ -6,10 +6,11 @@ export const Loading = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            height: 100
+            height: 450
           }}>
-            <i className="fa fa-spinner fa-pulse fa-3x fa-lg text-primary" ></i>
-            <p>Loading...</p> 
+              <div className="row">
+              <i className="fa fa-spinner fa-pulse fa-3x fa-lg text-primary" ></i>
+              </div>
         </div>
     );
 }

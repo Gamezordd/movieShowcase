@@ -51,3 +51,12 @@ export const fetchMovies = (page) => (dispatch) => {
         .then(thumbs => dispatch(addThumb(thumbs)))
         .catch(error => dispatch(thumbFailed(error.message)))
 }
+
+
+
+
+------------------------------------------
+
+                {this.props.thumbs.isLoading &&
+                    <Ghost />
+                }
