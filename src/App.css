@@ -30,6 +30,17 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
+@keyframes enter{
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
+
+.mature{
+  color:red;
+  right: 10px;
+  position: absolute;
+}
+
 .navbar-cust{
   max-height: 40px;
 }
@@ -70,7 +81,7 @@ body{
   margin: auto;
   overflow: hidden;
 }
-
+@media screen and (min-width: 900px){
 .content .content-overlay{
   background: rgb(0, 0, 0);
   position: absolute;
@@ -85,15 +96,21 @@ body{
   -moz-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
 }
-
-.button-like{
-  position: relative;
-  color: white;
-  font-size: 50px!important;
-  opacity:1;
-  margin-top:1.5em;
 }
 
+.button-like{
+  position: absolute;
+  color: white;
+  font-size: 50px!important;
+  bottom:15px;
+  left:15px;
+  opacity:1;
+}
+
+.modal-rating{
+  position:absolute;
+  bottom:10px;
+}
 
 .content-details:hover{
   background-color:black;
@@ -101,6 +118,7 @@ body{
 
 .content-image{
   width: 100%;
+  animation: enter 1s ease-in;
 }
 
 .content-details {
@@ -122,13 +140,13 @@ body{
   transition: all 0.3s ease-in-out 0s;
   font-family: 'Raleway', sans-serif;
 }
-
+@media screen and (min-width: 1000px){
 .content:hover .content-details{
   top: 50%;
   left: 50%;
   opacity: 0.8;
 }
-
+}
 .content-details:hover .content-image{
   opacity:0.8 ;
 }

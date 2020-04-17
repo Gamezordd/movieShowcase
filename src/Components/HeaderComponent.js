@@ -1,5 +1,5 @@
 import React, {Component,Fragment} from 'react';
-import{Navbar,NavbarBrand,Jumbotron} from 'reactstrap'
+import{Navbar} from 'reactstrap'
 
 export default class Header extends Component{
     constructor(props){

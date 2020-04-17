@@ -9,7 +9,7 @@ export const Loading = () => {
             height: 450
           }}>
               <div className="row">
-              <i className="fa fa-spinner fa-pulse fa-3x fa-lg text-primary" ></i>
+              <i className="fa fa-circle-o-notch fa-pulse fa-4x fa-lg text-primary"></i>
               </div>
         </div>
     );
