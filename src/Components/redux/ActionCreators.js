@@ -7,13 +7,12 @@ export const addThumb = (movies) => ({
 });
 
 export const createArr = (movies) => (dispatch) => {
-    
     const moviesArr = movies.map(movie => ({
         artwork: URLs.imageBaseUrl + movie.poster_path,
         title: movie.title,
         description: movie.overview,
         adult:movie.adult,
-        id:movie.id
+        rating:movie.vote_average
     }))
     
     return(dispatch(addThumb(moviesArr)))

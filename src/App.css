@@ -21,6 +21,24 @@ body{
   font-size: 16px;
   font-family: 'Raleway', sans-serif;
 }
+.modal-text{
+  font-family: 'Raleway', sans-serif;
+}
+
+.navbar-dark {
+  background-color: rgba(0, 0, 0, 0.801)!important;
+  font-family: 'Raleway', sans-serif;
+}
+
+.navbar-cust{
+  max-height: 40px;
+}
+
+.navbar-text{
+  color: rgba(247, 247, 247, 0.856);
+  margin-top: -10px;
+}
+
 .container1{
   padding: 0.1em;
   float: left;
@@ -102,6 +120,7 @@ body{
   -webkit-transition: all 0.3s ease-in-out 0s;
   -moz-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
+  font-family: 'Raleway', sans-serif;
 }
 
 .content:hover .content-details{

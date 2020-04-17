@@ -5,6 +5,7 @@ import {fetchMovies} from './redux/ActionCreators'
 import Ghost from './GhostLoad';
 import MovieDetail from './MovieDetailComponent';
 
+
 const mapDispatchToProps = (dispatch) => ({
     fetchMovies: (page) => dispatch(fetchMovies(page))
 });
@@ -42,6 +43,7 @@ class Main extends Component {
     }
 
     render(){
+        
         if(this.props.thumbs.isLoading && this.state.firstcall){
             return(
                 <div>

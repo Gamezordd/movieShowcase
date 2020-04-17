@@ -2,7 +2,6 @@ import React, {Component, Fragment} from 'react';
 import {Card, Modal, ModalHeader, ModalBody, Row, Col, CardHeader} from 'reactstrap';
 import Img from 'react-image';
 import {Loading} from './LoadingComponent'
-import ModalComponent from './ModalComponent'
 
 export default class MovieDetail extends Component{
     constructor(props){
@@ -24,6 +23,8 @@ export default class MovieDetail extends Component{
         
     }
     render(){
+        console.log("content:", this.props.content);
+        
         return(
             <div>
                 <div className="row mx-2 my-5 justify-content-center">
@@ -47,11 +48,11 @@ export default class MovieDetail extends Component{
                                                 src={element.artwork} 
                                                 loader={<Loading/>}
                                             />
-
                                             <div className="content-details fadeIn-left" onClick={() => this.toggleModal(element)}>
                                             <h3 className="content-title">{toShowTitle}</h3>
                                             <p className="content-text"> {toShowDescription}</p>
                                             <span className="fa fa-heart-o button-like" href=""/>
+
                                             </div>
                                         </div>
                                     </div>
@@ -67,8 +68,8 @@ export default class MovieDetail extends Component{
                                 <Img className="col-12 m-0 p-0 content-image" src={this.state2.artwork} loader={<Loading/>}/>
                                 </Col>
                                 <Col md="6">
-                                    <h4>{this.state2.title}</h4><hr/>
-                                    <p>{this.state2.description}</p>
+                                    <h4 className="modal-text">{this.state2.title}</h4><hr/>
+                                    <p className="modal-text">{this.state2.description}</p>
                                 </Col>
                             </Row>
                         </ModalBody>
